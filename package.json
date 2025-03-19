@@ -1,20 +1,24 @@
 {
   "name": "mcp-server-code-runner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "mcp-server-code-runner": "./dist/index.js"
+    "mcp-server-code-runner": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc && chmod 755 dist/index.js",
+    "build": "tsc && shx chmod +x dist/index.js",
     "watch": "tsc --watch",
     "start": "node ./dist/index.js"
   },
   "files": [
     "dist"
   ],
-  "keywords": ["mcp", "code-runner", "server"],
+  "keywords": [
+    "mcp",
+    "code-runner",
+    "server"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/formulahendry/mcp-server-code-runner.git"
@@ -28,6 +32,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.10",
+    "shx": "^0.4.0",
     "typescript": "^5.8.2"
   }
 }
