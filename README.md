@@ -50,3 +50,7 @@ Try below prompts in the application which has configured Code Runner MCP Server
 * `Run the JS Code: console.log(5+6)`
 * `Where is temporary folder in my OS?`
 * `How many CPUs do I have in my machine?`
+
+![](./images/usage-confirm.png)
+
+![](./images/usage-result.png)
