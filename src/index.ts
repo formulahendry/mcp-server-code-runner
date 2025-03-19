@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
@@ -7,7 +8,7 @@ async function main() {
     const server: McpServer = createServer();
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.error("Code Runner MCP Server running on stdio");
+    console.debug("Code Runner MCP Server running on stdio");
 }
 
 main().catch((error) => {
