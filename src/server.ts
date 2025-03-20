@@ -3,7 +3,7 @@ import { z } from "zod";
 import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
-import { executorMap } from "./constants.js";
+import { executorMap, languageIdToFileExtensionMap } from "./constants.js";
 import { exec } from "child_process";
 
 export function createServer(): McpServer {
@@ -55,7 +55,8 @@ export function createServer(): McpServer {
 
 async function createTmpFile(content: string, languageId: string) {
   const tmpDir = os.tmpdir();
-  const fileName = `tmp.${languageId}`;
+  const fileExtension = getFileExtension(languageId);
+  const fileName = `tmp.${fileExtension}`;
   const filePath = path.join(tmpDir, fileName);
 
   await fs.promises.writeFile(filePath, content);
@@ -63,6 +64,11 @@ async function createTmpFile(content: string, languageId: string) {
   console.debug(`Temporary file created at: ${filePath}`);
 
   return filePath;
+}
+
+function getFileExtension(languageId: string): string {
+  const fileExtension = languageIdToFileExtensionMap[languageId as keyof typeof languageIdToFileExtensionMap];
+  return fileExtension ?? languageId;
 }
 
 async function executeCommand(command: string): Promise<string> {

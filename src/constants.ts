@@ -37,3 +37,9 @@ export const executorMap = {
     sass: "sass --style expanded",
     scss: "scss --style expanded",
 };
+
+export const languageIdToFileExtensionMap = {
+    javascript: "js",
+    typescript: "ts",
+    powershell: "ps1",
+};

@@ -93,3 +93,7 @@ Try below prompts in the application which has configured Code Runner MCP Server
 ![](./images/usage-confirm.png)
 
 ![](./images/usage-result.png)
+
+## Build your own MCP Server
+
+Want to build your own MCP Server? Try [Yeoman Generator for MCP Server](https://www.npmjs.com/package/generator-mcp) to create your MCP Server project!
