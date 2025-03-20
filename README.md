@@ -4,6 +4,10 @@ MCP Server for running code snippet and show the result.
 
 It supports running multiple programming languages: **JavaScript, PHP, Python, Perl, Perl 6, Ruby, Go, Lua, Groovy, PowerShell, BAT/CMD, BASH/SH, F# Script, C# Script, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml Script, R, AppleScript, Elixir, Clojure, Racket, Scheme, AutoHotkey, AutoIt, Kotlin Script, Dart, Haskell, Ni, Lisp, Kit, V, SCSS, Sass**. Full list could be seen here in [constants.ts](https://github.com/formulahendry/mcp-server-code-runner/blob/main/src/constants.ts).
 
+<a href="https://glama.ai/mcp/servers/d3mluq4vy9">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/d3mluq4vy9/badge" alt="mcp-server-code-runner MCP server" />
+</a>
+
 ## Setup
 
 ### VS Code
