@@ -1,6 +1,5 @@
 # Code Runner MCP Server
-![NPM Downloads](https://img.shields.io/npm/d18m/mcp-server-code-runner)
- [![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner)
+[![NPM Downloads](https://img.shields.io/npm/d18m/mcp-server-code-runner)](https://www.npmjs.com/package/mcp-server-code-runner) [![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner)
 
 MCP Server for running code snippet and show the result.
 
