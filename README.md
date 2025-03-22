@@ -1,4 +1,5 @@
 # Code Runner MCP Server
+[![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner)
 
 MCP Server for running code snippet and show the result.
 
@@ -9,6 +10,14 @@ It supports running multiple programming languages: **JavaScript, PHP, Python, P
 </a>
 
 ## Setup
+
+### Installing via Smithery
+
+To install Code Runner MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@formulahendry/mcp-server-code-runner):
+
+```bash
+npx -y @smithery/cli install @formulahendry/mcp-server-code-runner --client claude
+```
 
 ### VS Code
 
