@@ -1,5 +1,6 @@
 # Code Runner MCP Server
-[![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner)
+![NPM Downloads](https://img.shields.io/npm/d18m/mcp-server-code-runner)
+ [![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner)
 
 MCP Server for running code snippet and show the result.
 
@@ -10,14 +11,6 @@ It supports running multiple programming languages: **JavaScript, PHP, Python, P
 </a>
 
 ## Setup
-
-### Installing via Smithery
-
-To install Code Runner MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@formulahendry/mcp-server-code-runner):
-
-```bash
-npx -y @smithery/cli install @formulahendry/mcp-server-code-runner --client claude
-```
 
 ### VS Code
 
@@ -58,6 +51,16 @@ Configuration in `claude_desktop_config.json`:
 }
 ```
 
+### Installing via Smithery
+
+> **_NOTE:_**  This will run Code Runner MCP Server in a remote Container environment hosted by Smithery.
+
+To install Code Runner MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@formulahendry/mcp-server-code-runner):
+
+```bash
+npx -y @smithery/cli install @formulahendry/mcp-server-code-runner --client claude
+```
+
 ### npx issue on Widnows
 
 On Windows, [MCP servers may fail to connect with `npx`](https://github.com/modelcontextprotocol/servers/issues/40).
@@ -91,7 +94,6 @@ Below is VS Code configuration in `settings.json`:
   }
 }
 ```
-
 
 ## Usage
 
