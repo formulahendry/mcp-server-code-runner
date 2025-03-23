@@ -1,6 +1,6 @@
 {
   "name": "mcp-server-code-runner",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "bin": {
     "mcp-server-code-runner": "dist/index.js"

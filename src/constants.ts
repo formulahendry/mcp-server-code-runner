@@ -1,4 +1,4 @@
-export const executorMap = {
+export const languageIdToExecutorMap = {
     javascript: "node",
     php: "php",
     python: "python -u",

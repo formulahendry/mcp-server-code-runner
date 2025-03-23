@@ -3,7 +3,7 @@ import { z } from "zod";
 import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
-import { executorMap, languageIdToFileExtensionMap } from "./constants.js";
+import { languageIdToExecutorMap, languageIdToFileExtensionMap } from "./constants.js";
 import { exec } from "child_process";
 
 export function createServer(): McpServer {
@@ -17,7 +17,7 @@ export function createServer(): McpServer {
     "Run code snippet and return the result.",
     {
       code: z.string().describe("Code Snippet"),
-      languageId: z.string().describe("Language ID"),
+      languageId: z.enum(Object.keys(languageIdToExecutorMap) as [keyof typeof languageIdToExecutorMap]).describe("Language ID"),
     },
     async ({ code, languageId }) => {
       if (!code) {
@@ -28,7 +28,7 @@ export function createServer(): McpServer {
         throw new Error("Language ID is required.");
       }
 
-      const executor = executorMap[languageId as keyof typeof executorMap];
+      const executor = languageIdToExecutorMap[languageId as keyof typeof languageIdToExecutorMap];
 
       if (!executor) {
         throw new Error(`Language '${languageId}' is not supported.`);
