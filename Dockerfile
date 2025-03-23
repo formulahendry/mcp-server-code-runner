@@ -19,6 +19,13 @@ FROM node:lts-alpine
 
 WORKDIR /app
 
+# Install Python and other programming languages
+RUN apk add --no-cache \
+    python3 \
+    go \
+    php \
+    ruby
+
 # Copy only the necessary files from the builder stage
 COPY --from=builder /app/dist ./dist
 COPY package*.json ./
