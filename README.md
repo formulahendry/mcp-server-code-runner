@@ -11,7 +11,7 @@ It supports running multiple programming languages: **JavaScript, PHP, Python, P
 
 ## Setup
 
-### VS Code
+### npx for VS Code
 
 Configuration in `settings.json`:
 
@@ -32,7 +32,7 @@ Configuration in `settings.json`:
 }
 ```
 
-### Claude Desktop
+### npx for Claude Desktop
 
 Configuration in `claude_desktop_config.json`: 
 
@@ -45,6 +45,29 @@ Configuration in `claude_desktop_config.json`:
         "-y",
         "mcp-server-code-runner"
       ],
+    }
+  }
+}
+```
+
+### Docker
+
+Use VS Code as example. Configuration in `settings.json`:
+
+```json
+{
+  "mcp": {
+    "inputs": [],
+    "servers": {
+      "mcp-server-code-runner": {
+        "command": "docker",
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "formulahendry/mcp-server-code-runner"
+        ]
+      }
     }
   }
 }
