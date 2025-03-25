@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "mcp-server-code-runner": {
+            "type": "stdio",
+            "command": "node",
+            "args": [
+                "${workspaceFolder}/dist/index.js"
+            ]
+        }
+    }
+}
