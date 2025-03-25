@@ -21,8 +21,8 @@
             "preLaunchTask": "npm: watch",
             "serverReadyAction": {
                 "action": "openExternally",
-                "pattern": "running at (https?://\\S+|[0-9]+)",
-                "uriFormat": "%s"
+                "pattern": "running at (https?://\\S+)",
+                "uriFormat": "%s?timeout=60000"
             }
         }
     ]
