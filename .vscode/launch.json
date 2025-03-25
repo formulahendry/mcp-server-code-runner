@@ -13,6 +13,7 @@
             ],
             "runtimeExecutable": "npx",
             "runtimeArgs": [
+                "-y",
                 "@modelcontextprotocol/inspector",
                 "node",
                 "dist/index.js"
