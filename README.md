@@ -13,7 +13,11 @@ It supports running multiple programming languages: **JavaScript, PHP, Python, P
 
 ### npx for VS Code
 
-Configuration in `settings.json`:
+Install the Code Runner MCP server in VS Code using below button:
+
+[![Install in VS Code Insiders](https://img.shields.io/badge/Install_MCP_Server-VS_Code_Insiders-24bfa5)](https://insiders.vscode.dev/redirect?url=vscode-insiders%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522mcp-server-code-runner%2522%252C%2522command%2522%253A%2522npx%2522%252C%2522args%2522%253A%255B%2522-y%2522%252C%2522mcp-server-code-runner%2540latest%2522%255D%257D)
+
+Alternatively, you can add configuration in `settings.json`:
 
 ```json
 {
@@ -24,7 +28,7 @@ Configuration in `settings.json`:
         "command": "npx",
         "args": [
           "-y",
-          "mcp-server-code-runner"
+          "mcp-server-code-runner@latest"
         ],
       }
     }
@@ -43,7 +47,7 @@ Configuration in `claude_desktop_config.json`:
       "command": "npx",
       "args": [
         "-y",
-        "mcp-server-code-runner"
+        "mcp-server-code-runner@latest"
       ],
     }
   }
@@ -109,7 +113,7 @@ Below is VS Code configuration in `settings.json`:
           "/c",
           "npx",
           "-y",
-          "mcp-server-code-runner"
+          "mcp-server-code-runner@latest"
         ],
       }
     }
