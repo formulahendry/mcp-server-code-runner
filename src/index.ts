@@ -7,8 +7,8 @@ import { createServer } from "./server.js";
 async function main() {
     const server: McpServer = createServer();
     const transport = new StdioServerTransport();
-    await server.connect(transport);
     console.debug("Code Runner MCP Server running on stdio");
+    return await server.connect(transport);
 }
 
 main().catch((error) => {
