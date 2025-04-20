@@ -125,6 +125,14 @@ Below is VS Code configuration in `settings.json`:
 }
 ```
 
+## Run with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
+
+```shell
+npm install
+npm run build
+npm run start:streamableHttp
+```
+
 ## Usage
 
 Before using Code Runner MCP Server, please make sure interpreter or compiler of the programming language you want to run is set in `PATH` environment variable.

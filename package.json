@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc && shx chmod +x dist/index.js",
     "watch": "tsc --watch",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "start:streamableHttp": "node dist/streamableHttp.js"
   },
   "files": [
     "dist"
@@ -26,10 +27,12 @@
   "license": "MIT",
   "description": "Code Runner MCP Server",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.7.0",
+    "@modelcontextprotocol/sdk": "^1.10.1",
+    "express": "^5.1.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "@types/node": "^22.13.10",
     "shx": "^0.4.0",
     "typescript": "^5.8.2"

@@ -1,11 +1,15 @@
 {
     "servers": {
-        "mcp-server-code-runner": {
+        "mcp-server-code-runner-stdio": {
             "type": "stdio",
             "command": "node",
             "args": [
                 "${workspaceFolder}/dist/index.js"
             ]
-        }
+        },
+        // "mcp-server-code-runner-streamable-http": {
+        //     "type": "http",
+        //     "url": "http://localhost:3088/mcp"
+        // },
     }
 }
