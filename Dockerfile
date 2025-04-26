@@ -38,4 +38,4 @@ RUN adduser -D mcpuser
 USER mcpuser
 
 # Set the entrypoint command
-CMD ["node", "./dist/index.js"]
+CMD ["node", "./dist/cli.js"]

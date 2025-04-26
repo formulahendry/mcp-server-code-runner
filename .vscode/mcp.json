@@ -4,7 +4,7 @@
             "type": "stdio",
             "command": "node",
             "args": [
-                "${workspaceFolder}/dist/index.js"
+                "${workspaceFolder}/dist/cli.js"
             ]
         },
         // "mcp-server-code-runner-streamable-http": {

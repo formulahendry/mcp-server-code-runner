@@ -81,16 +81,6 @@ Alternatively, you can add configuration in `settings.json`:
 }
 ```
 
-### Installing via Smithery
-
-> **_NOTE:_**  This will run Code Runner MCP Server in a remote Container environment hosted by Smithery.
-
-To install Code Runner MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@formulahendry/mcp-server-code-runner):
-
-```bash
-npx -y @smithery/cli install @formulahendry/mcp-server-code-runner --client claude
-```
-
 ### npx issue on Widnows
 
 On Windows, [MCP servers may fail to connect with `npx`](https://github.com/modelcontextprotocol/servers/issues/40).
@@ -128,9 +118,8 @@ Below is VS Code configuration in `settings.json`:
 ## Run with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
 
 ```shell
-npm install
-npm run build
-npm run start:streamableHttp
+npm install mcp-server-code-runner@latest
+mcp-server-code-runner --transport http
 ```
 
 ## Usage

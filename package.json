@@ -1,15 +1,18 @@
 {
   "name": "mcp-server-code-runner",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
+  "main": "dist/index.js",
   "bin": {
-    "mcp-server-code-runner": "dist/index.js"
+    "mcp-server-code-runner": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc && shx chmod +x dist/index.js",
+    "build": "tsc && shx chmod +x dist/index.js dist/cli.js",
     "watch": "tsc --watch",
-    "start": "node ./dist/index.js",
-    "start:streamableHttp": "node dist/streamableHttp.js"
+    "start": "node ./dist/cli.js"
   },
   "files": [
     "dist"
@@ -28,6 +31,7 @@
   "description": "Code Runner MCP Server",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.1",
+    "commander": "^13.1.0",
     "express": "^5.1.0",
     "zod": "^3.24.2"
   },

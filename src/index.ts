@@ -1,18 +1,18 @@
-#!/usr/bin/env node
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { createServer } from "./server.js";
+import { startStdioMcpServer } from "./stdio.js";
+import { startStreamableHttpMcpServer, McpServerEndpoint } from "./streamableHttp.js";
 
-async function main() {
-    const server: McpServer = createServer();
-    const transport = new StdioServerTransport();
-    await server.connect(transport);
-    console.debug("Code Runner MCP Server running on stdio");
+export type Transport = 'stdio' | 'http';
+
+export interface HttpServerOptions {
+    port?: number;
 }
 
-main().catch((error) => {
-    console.error("Fatal error in main():", error);
-    process.exit(1);
-});
-
-
+export async function startMcpServer(transport: Transport, options?: HttpServerOptions): Promise<void | McpServerEndpoint> {
+    if (transport === 'stdio') {
+        return startStdioMcpServer();
+    } else if (transport === 'http') {
+        return startStreamableHttpMcpServer(options?.port);
+    } else {
+        throw new Error('Invalid transport. Must be either "stdio" or "http"');
+    }
+}
