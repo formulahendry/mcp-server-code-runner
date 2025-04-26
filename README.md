@@ -118,7 +118,7 @@ Below is VS Code configuration in `settings.json`:
 ## Run with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
 
 ```shell
-npm install mcp-server-code-runner@latest
+npm install -g mcp-server-code-runner@latest
 mcp-server-code-runner --transport http
 ```
 
