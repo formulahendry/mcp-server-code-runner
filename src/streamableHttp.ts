@@ -67,7 +67,7 @@ export async function startStreamableHttpMcpServer(port?: number): Promise<McpSe
   const PORT = Number(port || process.env.PORT || 3088);
   
   return new Promise((resolve, reject) => {
-    const server = app.listen(PORT, (error) => {
+    const appServer = app.listen(PORT, (error) => {
       if (error) {
         console.error('Failed to start server:', error);
         reject(error);
@@ -82,7 +82,7 @@ export async function startStreamableHttpMcpServer(port?: number): Promise<McpSe
     });
 
     // Handle server errors
-    server.on('error', (error) => {
+    appServer.on('error', (error) => {
       console.error('Server error:', error);
       reject(error);
     });
