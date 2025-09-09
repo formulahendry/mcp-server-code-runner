@@ -1,6 +1,7 @@
 {
   "name": "mcp-server-code-runner",
-  "version": "0.1.7",
+  "version": "0.1.8",
+  "mcpName": "io.github.formulahendry/code-runner",
   "type": "module",
   "main": "dist/index.js",
   "bin": {

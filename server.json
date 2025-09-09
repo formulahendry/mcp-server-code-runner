@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.formulahendry/code-runner",
+  "description": "Code Runner MCP Server which can run code in various programming languages.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/formulahendry/mcp-server-code-runner",
+    "source": "github"
+  },
+  "version": "0.1.8",
+  "packages": [
+    {
+      "registry_type": "npm",
+      "registry_base_url": "https://registry.npmjs.org",
+      "identifier": "mcp-server-code-runner",
+      "version": "0.1.8",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
