@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/formulahendry-mcp-server-code-runner-badge.png)](https://mseep.ai/app/formulahendry-mcp-server-code-runner)
+
 # Code Runner MCP Server
 [![NPM Downloads](https://img.shields.io/npm/d18m/mcp-server-code-runner)](https://www.npmjs.com/package/mcp-server-code-runner) [![smithery badge](https://smithery.ai/badge/@formulahendry/mcp-server-code-runner)](https://smithery.ai/server/@formulahendry/mcp-server-code-runner) [![Docker Pulls](https://img.shields.io/docker/pulls/formulahendry/mcp-server-code-runner)](https://hub.docker.com/r/formulahendry/mcp-server-code-runner)
 
