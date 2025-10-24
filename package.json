@@ -13,7 +13,9 @@
   "scripts": {
     "build": "tsc && shx chmod +x dist/index.js dist/cli.js",
     "watch": "tsc --watch",
-    "start": "node ./dist/cli.js"
+    "start": "node ./dist/cli.js",
+    "start-http": "node ./dist/cli.js --transport=http",
+    "start-sse": "node ./dist/cli.js --transport=sse"
   },
   "files": [
     "dist"

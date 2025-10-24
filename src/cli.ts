@@ -9,8 +9,8 @@ program
   .name('mcp-server-code-runner')
   .description(pkg.description)
   .version(pkg.version)
-  .option('-t, --transport <transport>', 'Transport (stdio or http)', 'stdio')
-  .option('-p, --port <port>', 'Port number for HTTP server')
+  .option('-t, --transport <transport>', 'Transport (stdio, http, or sse)', 'stdio')
+  .option('-p, --port <port>', 'Port number for HTTP/SSE server')
   .action(async (options) => {
     try {
       await startMcpServer(options.transport, { port: parseInt(options.port) });    
