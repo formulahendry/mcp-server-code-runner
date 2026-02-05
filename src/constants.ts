@@ -23,7 +23,7 @@ export const languageIdToExecutorMap = {
     ocaml: "ocaml",
     r: "Rscript",
     applescript: "osascript",
-    clojure: "lein exec",
+    clojure: "clojure",
     racket: "racket",
     scheme: "csi -script",
     ahk: "autohotkey",
