@@ -1,0 +1,23 @@
+{
+  "name": "formulahendry/mcp-server-code-runner",
+  "description": "Code Runner MCP Server",
+  "accepts": [
+    {
+      "network": "eip155:8453",
+      "asset": "USDC",
+      "address": "YOUR_WALLET_ADDRESS"
+    }
+  ],
+  "resources": [
+    {
+      "path": "/code-runner",
+      "price": "0.01",
+      "description": "Pay-per-call access to code-runner"
+    },
+    {
+      "path": "/server",
+      "price": "0.01",
+      "description": "Pay-per-call access to server"
+    }
+  ]
+}
