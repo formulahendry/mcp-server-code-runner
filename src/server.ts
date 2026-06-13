@@ -4,7 +4,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
 import { languageIdToExecutorMap, languageIdToFileExtensionMap } from "./constants.js";
-import { exec } from "child_process";
+import { execFile } from "child_process";
 
 export function createServer(): McpServer {
   const server = new McpServer({
@@ -34,19 +34,22 @@ export function createServer(): McpServer {
         throw new Error(`Language '${languageId}' is not supported.`);
       }
 
-      const filePath = await createTmpFile(code, languageId);
-      const command = `${executor} "${filePath}"`;
+      const { filePath, tmpDir } = await createTmpFile(code, languageId);
 
-      const result = await executeCommand(command);
+      try {
+        const result = await executeCommand(executor, filePath);
 
-      return {
-        content: [
-          {
-            type: "text",
-            text: result,
-          },
-        ],
-      };
+        return {
+          content: [
+            {
+              type: "text",
+              text: result,
+            },
+          ],
+        };
+      } finally {
+        await fs.promises.rm(tmpDir, { recursive: true, force: true });
+      }
     },
   );
 
@@ -54,16 +57,16 @@ export function createServer(): McpServer {
 }
 
 async function createTmpFile(content: string, languageId: string) {
-  const tmpDir = os.tmpdir();
+  const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), "mcp-code-runner-"));
   const fileExtension = getFileExtension(languageId);
-  const fileName = `tmp.${fileExtension}`;
+  const fileName = `main.${fileExtension}`;
   const filePath = path.join(tmpDir, fileName);
 
   await fs.promises.writeFile(filePath, content);
 
   console.debug(`Temporary file created at: ${filePath}`);
 
-  return filePath;
+  return { filePath, tmpDir };
 }
 
 function getFileExtension(languageId: string): string {
@@ -71,15 +74,29 @@ function getFileExtension(languageId: string): string {
   return fileExtension ?? languageId;
 }
 
-async function executeCommand(command: string): Promise<string> {
+function splitCommand(command: string): string[] {
+  const parts = command.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g) ?? [];
+  return parts.map((part) => part.replace(/^["']|["']$/g, ""));
+}
+
+async function executeCommand(executor: string, filePath: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    console.debug(`Executing command: ${command}`);
-    exec(command, (error: any, stdout: string, stderr: string) => {
+    const [command, ...args] = splitCommand(executor);
+
+    if (!command) {
+      reject("Error: Executor is required.");
+      return;
+    }
+
+    console.debug(`Executing command: ${command} ${[...args, filePath].join(" ")}`);
+    execFile(command, [...args, filePath], (error: any, stdout: string, stderr: string) => {
       if (error) {
         reject(`Error: ${error.message}`);
+        return;
       }
       if (stderr) {
         reject(`Stderr: ${stderr}`);
+        return;
       }
       resolve(stdout);
     });
